@@ -17,7 +17,13 @@
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<form id="contact-me-form" action="\contact" method="POST">
-					<h3>Contact Me!</h3>
+					<h3>
+						Contact Me!
+						<div class="social-media">
+							<a class="btn btn-social-icon btn-github" href="https://github.com/dnewberr/"><span class="fa fa-github"></span></a>
+							<a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/deborah-newberry-b9b63089/"><span class="fa fa-linkedin"></span></a>
+						</div>
+					</h3>
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" class="form-control" name="name" placeholder="Name">
@@ -31,10 +37,17 @@
 						<label for="message">Message</label>
 						<textarea class="form-control" id="exampleTextarea" rows="10" name="message"></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
 				</form>
+
+
 			</div>
 		</div>
 	</div>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap-social.css">
 	<link rel="stylesheet" type="text/css" href="./stylesheets/contact.css">
 <% include partials/footer %>

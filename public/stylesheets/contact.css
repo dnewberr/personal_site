@@ -11,3 +11,14 @@ body {
 .btn-primary {
 	width: 100%;
 }
+
+.social-media {
+    display: inline;
+    float:right;
+    max-width: 100%;
+}
+
+.social-media a:visited {
+	color: white;
+}
+
