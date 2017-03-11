@@ -5,7 +5,6 @@ var express = require("express"),
 
 var app = express();
 app.set("view engine", "ejs");
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -30,19 +29,18 @@ app.get("/", function(req, res) {
    res.render("index") ;
 });
 
-// INDEX
+// PROJECTS
 app.get("/projects", function(req, res) {
     Project.find({}, function(err, projects) {
         if (err) {
             console.log(err);
         } else {
-            console.log("SUCCESS!");
             res.render("projects", {projects: projects}) ;
         }
     });
 });
 
-// INDEX
+// ABOUT
 app.get("/about", function(req, res) {
    ResumeItem.find({}, function(err, resumeItems) {
         if (err) {
@@ -52,13 +50,12 @@ app.get("/about", function(req, res) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log("SUCCESS!");
                     res.render("about", {
                         workItems: resumeItems.filter(work),
                         educationItems: resumeItems.filter(education),
                         leadershipSkills: resumeSkills.filter(leadership),
                         jobSkills: resumeSkills.filter(job)
-                    }) ;
+                    });
                 }
             });
         }
@@ -78,7 +75,7 @@ function job(resumeSkill) {
     return resumeSkill.type == "Job";
 }
 
-// INDEX
+// CONTACT
 app.get("/contact", function(req, res) {
    res.render("contact") ;
 });

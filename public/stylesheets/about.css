@@ -13,3 +13,8 @@ body {
 #resume-btn:visited {
 	color: white;
 }
+
+.image-block {
+	margin: 25px auto;
+	height: 75%;
+}
