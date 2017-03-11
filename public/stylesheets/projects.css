@@ -13,3 +13,7 @@ body {
 hr {
 	border-top: 1px solid #388484;
 }
+
+.panel-group {
+	margin: 0 15px;
+}

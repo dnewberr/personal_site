@@ -32,7 +32,7 @@
                                 </div>
                                 <div id="collapseW<%=i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingW<%=i%>">
                                     <!--Description-->
-                                    <div class="panel-body"><%=item.description%></div>
+                                    <div class="panel-body"><%-item.description%></div>
                                 </div>
                             </div>
                         <% } %>
@@ -55,17 +55,15 @@
                                 </div>
                             </div>
                         <% } %>
-                    </div>
 
 
-                    <!-- Skills -->
-                    <h3>Skills</h3>
-                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                        <!-- Skills -->
+                        <h3>Skills</h3>
                         <!-- Leadership -->
                         <div class="panel">
                             <div role="tab" id="heading5">
                                 <h4>
-                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
                                         Leadership Experience
                                     </a>
                                 </h4>
@@ -87,7 +85,7 @@
                         <div class="panel">
                             <div role="tab" id="heading6">
                                 <h4>
-                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
                                         Programming Experience
                                     </a>
                                 </h4>
