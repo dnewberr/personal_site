@@ -1,15 +1,29 @@
 var express = require("express"),
-    mongoose = require("mongoose")
+    mongoose = require("mongoose"),
+    bodyParser = require("body-parser"),
+    nodemailer = require("nodemailer");
 
 var app = express();
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // DATABASE
 mongoose.connect("mongodb://localhost/personal_site");
 var Project = require("./models/project");
 var ResumeItem = require("./models/resumeItem");
 var ResumeSkill = require("./models/resumeSkill");
+
+//EMAIL
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: {
+        user: 'dnewberry.contact@gmail.com',
+        pass: 'c0ntact123!'
+      }
+});
 
 // INDEX
 app.get("/", function(req, res) {
@@ -67,6 +81,33 @@ function job(resumeSkill) {
 // INDEX
 app.get("/contact", function(req, res) {
    res.render("contact") ;
+});
+
+app.post("/contact", function(req, res) {
+    var mailOptions = {
+        to : "dnewberry16@gmail.com",
+        subject : "New Contact from Personal Site!",
+        text : "From: " + req.body.name + "<" + req.body.email + ">\n\n\t" + req.body.message
+    }
+
+    smtpTransport.sendMail(mailOptions, function(error, response){
+        if(error){
+            console.log(error);
+        } else {
+            mailOptions = {
+                to : req.body.email,
+                subject : "Thanks for the message!",
+                text : req.body.name + ",\n\nThanks for sending me a message. I've received it and I'll get back to you as soon as possible.\n\n- Deborah"
+            }
+            smtpTransport.sendMail(mailOptions, function(error, response){
+                if(error){
+                    console.log(error);
+                } else{
+                    res.redirect("/");
+                }
+            });
+        }
+    });
 });
 
 // SERVER

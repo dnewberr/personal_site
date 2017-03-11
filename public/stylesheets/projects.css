@@ -5,3 +5,11 @@ body {
 .project-details {
 	padding: 0 20px;
 }
+
+.project-image {
+	margin: 10px auto;
+}
+
+hr {
+	border-top: 1px solid #388484;
+}

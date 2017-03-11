@@ -10,8 +10,13 @@
   "author": "Deborah Newberry",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "mongoose": "^4.8.6"
+    "express-mailer": "^0.3.1",
+    "jade": "^1.11.0",
+    "mongoose": "^4.8.6",
+    "nodemailer": "^3.1.5"
   }
 }

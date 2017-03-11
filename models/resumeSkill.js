@@ -31,8 +31,6 @@ module.exports = mongoose.model("ResumeSkill", resumeSkillSchema);
 
 
 
-
-
 // ResumeSkill.create({
 //     title: "Java",
 //     date: "",
