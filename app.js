@@ -28,20 +28,6 @@ app.get("/projects", function(req, res) {
     });
 });
 
-
-// ResumeItem.create({
-//     title: "TESTWORK",
-//     date: "TESTWORK",
-//     description: "TESTWORK",
-//     type: "Work"
-// });
-// ResumeItem.create({
-//     title: "NOT WORK",
-//     date: "NOT WORK",
-//     description: "NOT WORK",
-//     type: "Work2"
-// });
-
 // INDEX
 app.get("/about", function(req, res) {
    ResumeItem.find({}, function(err, resumeItems) {
@@ -52,11 +38,12 @@ app.get("/about", function(req, res) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log("SUCCESS!\n" + resumeItems + "\n\tSKILLS:\n" + resumeSkills);
+                    console.log("SUCCESS!");
                     res.render("about", {
                         workItems: resumeItems.filter(work),
                         educationItems: resumeItems.filter(education),
-                        resumeSkills: resumeSkills
+                        leadershipSkills: resumeSkills.filter(leadership),
+                        jobSkills: resumeSkills.filter(job)
                     }) ;
                 }
             });
@@ -69,6 +56,12 @@ function work(resumeItem) {
 }
 function education(resumeItem) {
     return resumeItem.type == "Education";
+}
+function leadership(resumeSkill) {
+    return resumeSkill.type == "Leadership";
+}
+function job(resumeSkill) {
+    return resumeSkill.type == "Job";
 }
 
 // INDEX
