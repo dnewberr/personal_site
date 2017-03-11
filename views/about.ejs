@@ -1,0 +1,186 @@
+<% include partials/header %>
+            <div class="collapse navbar-collapse navbar-right" id="bs-nav-demo">
+	         	<ul class="nav navbar-nav">
+			        <li><a href="/">Home </a></li>
+			        <li><a href="/projects">Projects </a></li>
+                    <li class="active"><a href="/about">About <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/contact">Contact Me </a></li>
+                </ul>
+            </div>
+        </div>
+	</nav>
+
+	<div class="container">
+		<div class="about-me">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>About Me</h1>
+					<p>I'm 23 years old and reside in the San Francisco Bay area. I enjoy building mobile applications, and have recently taken an interest in full-stack web development. Apart from programming, I've been involved in music since I began playing the flute in fall of 2003. Since then, I've been involved in multiple bands and choirs, and have tried (and sometimes succeeded) to pick up a multitude of instruments including guitar, baritone, and tenor saxophone.</p>
+
+					<h3>Work Experience</h3>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <% for(var i = 0; i < workItems.length; i++) { var item = workItems[i]; %>
+                            <div class="panel">
+                                <div role="tab" id="heading<%=i%>">
+                                    <h4>
+                                        <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>" aria-expanded="false" aria-controls="collapse<%=i%>">
+                                            <%=item.title%> <span class="date"><%=item.date%></span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse<%=i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=i%>">
+                                    <div class="panel-body"><%=item.description%></div>
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <!-- Work 1 -->
+                        <div class="panel">
+                            <div role="tab" id="heading1">
+                                <h4>
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                        Tenmarks, Amazon <span class="date"> Jun 2016 - Sep 2016</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                                <div class="panel-body">Software Developer Intern</div>
+                            </div>
+                        </div>
+
+                       <!-- Work 2 -->
+                        <div class="panel">
+                            <div role="tab" id="heading2">
+                                <h4>
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        Prime Membership, Amazon SLO <span class="date"> Dec 2014 - Jun 2016</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                                <div class="panel-body">Jr. Sofware Developer</div>
+                            </div>
+                        </div>
+
+                        <!-- Work 3 -->
+                        <div class="panel">
+                            <div role="tab" id="heading3">
+                                <h4>
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        Network Administration, Cal Poly <span class="date"> Apr 2014 - Nov 2014</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                                <div class="panel-body">Student / Firewall Pinhole Assistant</div>
+                            </div>
+                        </div>
+                    </div>
+
+					<!-- Education -->
+					<h3>Education</h3>
+                    <a class="collapsed" data-toggle="collapse" href="#collapse4">
+                        <h4 class="panel-header">Cal Poly, San Luis Obispo <span class="date"> Sep 2012 - Mar 2017</span></h4>
+                    </a>
+                    <div id="collapse4" class="collapse">
+                        <p>Bachelor of Science, Computer Science | Minor in Mathematics</p>
+                    </div>
+
+
+
+                    <!-- Skills -->
+                    <h3>Skills</h3>
+                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                        <!-- Leadership -->
+                        <div class="panel">
+                            <div role="tab" id="heading5">
+                                <h4>
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                        Leadership Experience
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                                <div class="panel-body">
+                                    <div class="row">
+                                            <div class="col-xs-12">
+                                                Mustang Band Section Leader <span class="date">School Year '15 - '16, Fall '15</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <a href="http://www.orientation.calpoly.edu/wow/home">WoW</a> Orientation Leader <span class="date">Falls '13, '14, and '15</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                Mustang Band Orientation Coordinator <span class="date">Spring and Falls '14 and '15</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                Iota Pi Service Committee Chair <span class="date">School Year '15 - '16</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                       <!-- Programming -->
+                        <div class="panel">
+                            <div role="tab" id="heading6">
+                                <h4>
+                                    <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                        Programming Experience
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3">
+                                            Java
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            Swift
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            C
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            Objective C
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            HTML
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            CSS
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            JavaScript
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            UI/UX
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            iOS Dev
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            Android Dev
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3">
+                                            Databases
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>
+                                    Head over to my <a href="projects.html">projects</a> for more details!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-xs-0 col-md-6">
+                    <img class="bio-image img-responsive visible-md-block visible-lg-block" src="../images/about_me_smile.jpg">
+
+                    <a id="resume-btn" class="btn btn-primary btn-lg btn-block"
+                        href="./resume.pdf">Download My Resume</a>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/about.css">
+<% include partials/footer %>

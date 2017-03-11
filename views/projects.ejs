@@ -1,0 +1,54 @@
+<% include partials/header %>
+            <div class="collapse navbar-collapse navbar-right" id="bs-nav-demo">
+	         	<ul class="nav navbar-nav">
+			        <li><a href="/">Home </a></li>
+			        <li class="active"><a href="/projects">Projects <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/about">About </a></li>
+                    <li><a href="/contact">Contact Me </a></li>
+                </ul>
+            </div>
+        </div>
+	</nav>
+
+	<!-- Projects -->
+    <div class="container main-content">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <% for (var i = 0; i < projects.length; i++) { var project = projects[i]; %>
+                <div class="panel">
+                    <!-- Panel Title - should match project-title -->
+                    <div role="tab" id="project">
+                        <h3>
+                            <a class="panel-header collapsed<%=i%>" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>" aria-expanded="<%= i == 0 %>" aria-controls="collapse<%=i%>">
+                                <%=project.name%>
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapse<%=i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="project">
+                        <div class="row project">
+                            <div class="col-xs-0 col-md-3 project-image">
+                                <img class="project-image img-responsive"  id="savvy" src="<%=project.image%>">
+                            </div>
+                            <div class="col-xs-12 col-md-9 project-details">
+                                <!-- Project Title - should match panel title -->
+                                <h3 class="project-title"><%=project.name%></h3>
+                                <!-- Project Stats -->
+                                <div class="row project-stats">
+                                    <div class="col-xs-6 col-sm-3"><strong> Completed: </strong> <%=project.completed%></div>
+                                    <div class="col-xs-6 col-sm-3"><strong> Language: </strong> <%=project.language%></div>
+                                    <div class="col-xs-6 col-sm-3"><strong> Platform: </strong> <%=project.platform%></div>
+                                    <div class="col-xs-6 col-sm-3"><a href="<%=project.link%>"> <%=project.linkDescription%></a></div>
+                                </div>
+                                <hr>
+                                <!-- Project Description -->
+                                <p class="project-info">
+                                    <%-project.description%>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }%>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/projects.css">
+<% include partials/footer %>
