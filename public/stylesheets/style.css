@@ -1,5 +1,6 @@
 body {
 	background-color: rgba(146,198,198,0.4);
+	font-family: 'Raleway', sans-serif;
 }
 
 .footer {
@@ -48,7 +49,6 @@ body {
 .btn-primary {
 	background-color: #599C9C;
 	border: none;
-	font-weight: lighter;
 }
 
 .btn-primary:link {
