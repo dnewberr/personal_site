@@ -9,7 +9,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // DATABASE
-mongoose.connect("mongodb://localhost/personal_site");
+// mongoose.connect("mongodb://localhost/personal_site");
+mongoose.connect("mongodb://deborah:personal@ds131320.mlab.com:31320/personal_site");
 var Project = require("./models/project");
 var ResumeItem = require("./models/resumeItem");
 var ResumeSkill = require("./models/resumeSkill");
