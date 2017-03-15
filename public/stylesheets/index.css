@@ -8,6 +8,9 @@ body {
 	color: white;
 }
 
+#photo-cred {
+	text-align: center;
+}
 #profile {
 	padding-top: 5%;
 	display: block;
@@ -25,13 +28,9 @@ body {
 				0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
-#index-footer {
-	color: white;
-}
-
 #hello {
 	font-weight: 700;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 hr {

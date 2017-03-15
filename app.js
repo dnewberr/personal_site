@@ -90,19 +90,9 @@ app.post("/contact", function(req, res) {
     smtpTransport.sendMail(mailOptions, function(error, response){
         if(error){
             console.log(error);
+            res.render("contact", {alertClass: "alert-danger", alertTitle: "Error!", alertMessage: "There was an error in sending your email. Please try again later."})
         } else {
-            mailOptions = {
-                to : req.body.email,
-                subject : "Thanks for the message!",
-                text : req.body.name + ",\n\nThanks for sending me a message. I've received it and I'll get back to you as soon as possible.\n\n- Deborah"
-            }
-            smtpTransport.sendMail(mailOptions, function(error, response){
-                if(error){
-                    console.log(error);
-                } else{
-                    res.redirect("/");
-                }
-            });
+            res.render("contact", {alertClass: "alert-success", alertTitle: "Success!", alertMessage: "Your email has been sent!"})
         }
     });
 });
