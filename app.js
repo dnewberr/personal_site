@@ -52,7 +52,8 @@ app.get("/about", function(req, res) {
                     console.log(err);
                 } else {
                     res.render("about", {
-                        workItems: sortByTimeline(resumeItems.filter(work)),
+                        workItems: resumeItems.filter(work).sort(orderByTimeline),
+                        internshipItems: resumeItems.filter(internship).sort(orderByTimeline),
                         educationItems: resumeItems.filter(education),
                         leadershipSkills: resumeSkills.filter(leadership),
                         jobSkills: resumeSkills.filter(job)
@@ -63,22 +64,26 @@ app.get("/about", function(req, res) {
     });
 });
 
-function sortByTimeline(items) {
-    items.sort(function(a, b){
-      return a.timeline == b.timeline;
-    });
-
-    return items;
+function orderByTimeline(a, b) {
+    return a.timeline < b.timeline;
 }
+
+function internship(resumeItem) {
+    return resumeItem.type == "Internship";
+}
+
 function work(resumeItem) {
     return resumeItem.type == "Work";
 }
+
 function education(resumeItem) {
     return resumeItem.type == "Education";
 }
+
 function leadership(resumeSkill) {
     return resumeSkill.type == "Leadership";
 }
+
 function job(resumeSkill) {
     return resumeSkill.type == "Job";
 }
