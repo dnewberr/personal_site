@@ -18,14 +18,14 @@
 					<p>I'm 24 years old and reside in the San Francisco Bay area. I enjoy building mobile applications, and have recently taken an interest in full-stack web development. Apart from programming, I've been involved in music since I began playing the flute in fall of 2003. Since then, I've been involved in multiple bands and choirs, and have tried (and sometimes succeeded) to pick up a multitude of instruments including guitar, baritone, and tenor saxophone.</p>
 
 					<h3>Full-Time Jobs</h3>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="accordionW" role="tablist" aria-multiselectable="true">
                         <!--Work Item-->
                         <% for(var i = 0; i < workItems.length; i++) { var item = workItems[i]; %>
                             <div class="panel">
                                 <div role="tab" id="heading<%=i%>">
                                     <h4>
                                         <!--Title and date-->
-                                        <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseW<%=i%>" aria-expanded="false" aria-controls="collapseW<%=i%>">
+                                        <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordionW" href="#collapseW<%=i%>" aria-expanded="false" aria-controls="collapseW<%=i%>">
                                             <%=item.title%> <span class="date"><%=item.date%></span>
                                         </a>
                                     </h4>
@@ -45,12 +45,12 @@
                                 <div role="tab" id="heading<%=i%>">
                                     <h4>
                                         <!--Title and date-->
-                                        <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseW<%=i%>" aria-expanded="false" aria-controls="collapseW<%=i%>">
+                                        <a class="panel-header" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseI<%=i%>" aria-expanded="false" aria-controls="collapseI<%=i%>">
                                             <%=item.title%> <span class="date"><%=item.date%></span>
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseW<%=i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingW<%=i%>">
+                                <div id="collapseI<%=i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingI<%=i%>">
                                     <!--Description-->
                                     <div class="panel-body"><%-item.description%></div>
                                 </div>
