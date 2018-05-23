@@ -23,3 +23,17 @@ body {
 .panel-group .panel {
 	padding-bottom: 10px;
 }
+
+.btn-primary {
+	width: 100%;
+}
+
+.social-media {
+    display: inline;
+    float: right;
+    max-width: 100%;
+}
+
+.social-media a:visited {
+	color: white;
+}
