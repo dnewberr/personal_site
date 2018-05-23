@@ -36,7 +36,7 @@ app.get("/projects", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("projects", {projects: projects}) ;
+            res.render("projects", {projects: projects});
         }
     });
 });
@@ -52,7 +52,7 @@ app.get("/about", function(req, res) {
                     console.log(err);
                 } else {
                     res.render("about", {
-                        workItems: resumeItems.filter(work),
+                        workItems: sortByTimeline(resumeItems.filter(work)),
                         educationItems: resumeItems.filter(education),
                         leadershipSkills: resumeSkills.filter(leadership),
                         jobSkills: resumeSkills.filter(job)
@@ -63,6 +63,13 @@ app.get("/about", function(req, res) {
     });
 });
 
+function sortByTimeline(items) {
+    items.sort(function(a, b){
+      return a.timeline == b.timeline;
+    });
+
+    return items;
+}
 function work(resumeItem) {
     return resumeItem.type == "Work";
 }
@@ -88,8 +95,8 @@ app.post("/contact", function(req, res) {
         text : "From: " + req.body.name + "<" + req.body.email + ">\n\n\t" + req.body.message
     }
 
-    smtpTransport.sendMail(mailOptions, function(error, response){
-        if(error){
+    smtpTransport.sendMail(mailOptions, function(error, response) {
+        if(error) {
             console.log(error);
             res.render("contact", {alertClass: "alert-danger", alertTitle: "Error!", alertMessage: "There was an error in sending your email. Please try again later."})
         } else {

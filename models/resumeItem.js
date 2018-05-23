@@ -4,7 +4,8 @@ var resumeItemSchema = mongoose.Schema({
     title: String,
     date: String,
     description: String,
-    type: String
+    type: String,
+    timeline: Number
 });
 
 module.exports = mongoose.model("ResumeItem", resumeItemSchema);
