@@ -1,17 +1,18 @@
 var express = require("express"),
     mongoose = require("mongoose"),
-    bodyParser = require("body-parser"),
-    favicon = require('serve-favicon');
-
-// FAVICON
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
-
+    bodyParser = require("body-parser");
+var favicon = require('serve-favicon');
 
 // EXPRESS
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.listen(3000);
+
+
+// FAVICON
+app.use(favicon("public/images/favicon.ico")); 
 
 // DATABASE
 // mongoose.connect("mongodb://localhost/personal_site");
