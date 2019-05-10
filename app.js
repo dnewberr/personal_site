@@ -1,7 +1,6 @@
 var express = require("express"),
     mongoose = require("mongoose"),
-    bodyParser = require("body-parser"),
-    nodemailer = require("nodemailer");
+    bodyParser = require("body-parser");
 
 var app = express();
 app.set("view engine", "ejs");
@@ -14,16 +13,6 @@ mongoose.connect("mongodb://deborah:personal@ds131320.mlab.com:31320/personal_si
 var Project = require("./models/project");
 var ResumeItem = require("./models/resumeItem");
 var ResumeSkill = require("./models/resumeSkill");
-
-//EMAIL
-var smtpTransport = nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-    auth: {
-        user: 'dnewberry.contact@gmail.com',
-        pass: 'c0ntact123!'
-      }
-});
 
 // INDEX
 app.get("/", function(req, res) {
@@ -87,28 +76,6 @@ function leadership(resumeSkill) {
 function job(resumeSkill) {
     return resumeSkill.type == "Job";
 }
-
-// CONTACT
-app.get("/contact", function(req, res) {
-   res.render("contact") ;
-});
-
-app.post("/contact", function(req, res) {
-    var mailOptions = {
-        to : "dnewberry16@gmail.com",
-        subject : "New Contact from Personal Site!",
-        text : "From: " + req.body.name + "<" + req.body.email + ">\n\n\t" + req.body.message
-    }
-
-    smtpTransport.sendMail(mailOptions, function(error, response) {
-        if(error) {
-            console.log(error);
-            res.render("contact", {alertClass: "alert-danger", alertTitle: "Error!", alertMessage: "There was an error in sending your email. Please try again later."})
-        } else {
-            res.render("contact", {alertClass: "alert-success", alertTitle: "Success!", alertMessage: "Your email has been sent!"})
-        }
-    });
-});
 
 // SERVER
 app.listen(process.env.PORT, process.env.IP, function() {
