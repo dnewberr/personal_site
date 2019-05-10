@@ -1,7 +1,13 @@
 var express = require("express"),
     mongoose = require("mongoose"),
-    bodyParser = require("body-parser");
+    bodyParser = require("body-parser"),
+    favicon = require('serve-favicon');
 
+// FAVICON
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
+
+
+// EXPRESS
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
