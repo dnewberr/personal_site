@@ -1,17 +1,17 @@
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 
-var projectSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    completed: String,
-    language: String,
-    platform: String,
-    link: String,
-    linkDescription: String,
-    description: String
-});
+// var projectSchema = new mongoose.Schema({
+//     name: String,
+//     image: String,
+//     completed: String,
+//     language: String,
+//     platform: String,
+//     link: String,
+//     linkDescription: String,
+//     description: String
+// });
 
-module.exports = mongoose.model("Project", projectSchema);
+// module.exports = mongoose.model("Project", projectSchema);
 
 
 

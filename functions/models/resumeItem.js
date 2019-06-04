@@ -1,14 +1,14 @@
-var mongoose = require("mongoose")
+// var mongoose = require("mongoose")
 
-var resumeItemSchema = mongoose.Schema({
-    title: String,
-    date: String,
-    description: String,
-    type: String,
-    timeline: Number
-});
+// var resumeItemSchema = mongoose.Schema({
+//     title: String,
+//     date: String,
+//     description: String,
+//     type: String,
+//     timeline: Number
+// });
 
-module.exports = mongoose.model("ResumeItem", resumeItemSchema);
+// module.exports = mongoose.model("ResumeItem", resumeItemSchema);
 
 // ResumeItem.create({
 //     title: "Tenmarks, Amazon",

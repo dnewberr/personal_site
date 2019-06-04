@@ -1,12 +1,12 @@
-var mongoose = require("mongoose")
+// var mongoose = require("mongoose")
 
-var resumeSkillSchema = mongoose.Schema({
-    title: String,
-    date: String,
-    type: String
-});
+// var resumeSkillSchema = mongoose.Schema({
+//     title: String,
+//     date: String,
+//     type: String
+// });
 
-module.exports = mongoose.model("ResumeSkill", resumeSkillSchema);
+// module.exports = mongoose.model("ResumeSkill", resumeSkillSchema);
 
 // ResumeSkill.create({
 //     title: "Mustang Band Section Leader",
