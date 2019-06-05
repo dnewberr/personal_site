@@ -35,7 +35,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // FAVICON
-app.use(favicon("public/images/favicon.ico")); 
+// app.use(favicon("./public/images/favicon.ico")); 
 
 // INDEX
 app.get("/", function(req, res) {
